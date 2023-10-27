@@ -3,7 +3,10 @@ return {
   dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
 
   config = function()
+    local actions = require 'telescope.actions'
+
     local fb_utils = require 'telescope._extensions.file_browser.utils'
+    local fb_actions = require('telescope').extensions.file_browser.actions
     local action_state = require 'telescope.actions.state'
     local Path = require 'plenary.path'
 
@@ -36,10 +39,18 @@ return {
           mappings = {
             ['i'] = {
               -- your custom insert mode mappings
+
+              -- Remap change cwd and disable default
+              ['<C-p>'] = fb_actions.change_cwd,
+              ['<C-t>'] = actions.select_tab,
             },
             ['n'] = {
               -- your custom normal mode mappings
-              ['cb'] = current_bufr_dir,
+              ['bw'] = current_bufr_dir,
+
+              -- Remap change cwd and disable default
+              ['p'] = fb_actions.change_cwd,
+              ['t'] = false,
             },
           },
         },
