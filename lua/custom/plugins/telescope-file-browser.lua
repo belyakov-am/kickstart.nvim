@@ -25,6 +25,7 @@ return {
       })
     end
 
+    -- TODO(belyakov_am): open FB in current buffer dir
     require('telescope').setup {
       extensions = {
         file_browser = {
