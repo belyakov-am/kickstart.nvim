@@ -28,11 +28,12 @@ return {
   opts = {
     options = {
       icons_enabled = false,
-      theme = 'onedark',
+      theme = 'nightfly',
       component_separators = '|',
       section_separators = '',
     },
     sections = {
+      lualine_a = { 'mode', 'location' },
       lualine_b = { 'branch', 'diff', 'diagnostics' },
       lualine_c = {
         {
@@ -40,6 +41,9 @@ return {
           path = 1,
         },
       },
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {},
     },
   },
 }
