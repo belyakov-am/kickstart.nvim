@@ -302,6 +302,9 @@ vim.keymap.set('n', 'L', '$')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
+-- Remove highlight after search
+vim.keymap.set('n', '<CR>', ':noh<CR><CR>', { silent = true })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
