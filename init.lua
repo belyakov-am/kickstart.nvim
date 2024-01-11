@@ -424,7 +424,7 @@ vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
 
-vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { desc = '[F]ile [B]rowser', noremap = true })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
