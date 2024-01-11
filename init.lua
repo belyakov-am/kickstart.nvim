@@ -298,6 +298,10 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('n', 'H', '^')
 vim.keymap.set('n', 'L', '$')
 
+-- Center cursor after scrolling
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
