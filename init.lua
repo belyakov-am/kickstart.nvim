@@ -419,6 +419,7 @@ vim.keymap.set('n', '<leader>fG', require('telescope.builtin').git_files, { desc
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>fB', require('telescope.builtin').buffers, { desc = '[F]ind [B]uffers' })
 vim.keymap.set('n', '<leader>fc', require('telescope.builtin').commands, { desc = '[F]ind [C]ommands' })
+vim.keymap.set('n', '<leader>fr', ':Telescope resume<CR>', { desc = '[F]ind [R]esume' })
 
 vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[F]ind current [W]ord' })
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = '[F]ind by [G]rep' })
