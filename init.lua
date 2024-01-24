@@ -298,9 +298,11 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('n', 'H', '^')
 vim.keymap.set('n', 'L', '$')
 
--- Center cursor after scrolling
+-- Center cursor after motions
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<C-o>', '<C-o>zz')
+vim.keymap.set('n', 'gd', 'gdzz')
 
 -- Remove highlight after search
 vim.keymap.set('n', '<CR>', ':noh<CR><CR>', { silent = true })
