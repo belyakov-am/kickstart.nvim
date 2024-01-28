@@ -5,6 +5,6 @@ return {
       enable = false,
     }
 
-    vim.keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", {})
+    vim.keymap.set('n', '<leader>gb', ':GitBlameToggle<CR>', {})
   end,
 }

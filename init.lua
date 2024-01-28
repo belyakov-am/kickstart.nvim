@@ -115,7 +115,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -129,12 +129,9 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>gsp', require('gitsigns').prev_hunk,
-          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
-        vim.keymap.set('n', '<leader>gsn', require('gitsigns').next_hunk,
-          { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
-        vim.keymap.set('n', '<leader>gsph', require('gitsigns').preview_hunk,
-          { buffer = bufnr, desc = '[P]review [H]unk' })
+        vim.keymap.set('n', '<leader>gsp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+        vim.keymap.set('n', '<leader>gsn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
+        vim.keymap.set('n', '<leader>gsph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
       end,
     },
   },
@@ -348,23 +345,23 @@ vim.g.loaded_python3_provider = 0
 -- Catpuccin
 require('catppuccin').setup {
   flavour = 'mocha', -- latte, frappe, macchiato, mocha
-  background = {     -- :h background
+  background = { -- :h background
     light = 'latte',
     dark = 'mocha',
   },
   transparent_background = false, -- disables setting the background color.
-  show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
-  term_colors = false,            -- sets terminal colors (e.g. `g:terminal_color_0`)
+  show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+  term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
   dim_inactive = {
-    enabled = false,              -- dims the background color of inactive window
+    enabled = false, -- dims the background color of inactive window
     shade = 'dark',
-    percentage = 0.15,            -- percentage of the shade to apply to the inactive window
+    percentage = 0.15, -- percentage of the shade to apply to the inactive window
   },
-  no_italic = false,              -- Force no italic
-  no_bold = false,                -- Force no bold
-  no_underline = false,           -- Force no underline
-  styles = {                      -- Handles the styles of general hi groups (see `:h highlight-args`):
-    comments = { 'italic' },      -- Change the style of comments
+  no_italic = false, -- Force no italic
+  no_bold = false, -- Force no bold
+  no_underline = false, -- Force no underline
+  styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+    comments = { 'italic' }, -- Change the style of comments
     conditionals = { 'italic' },
     loops = {},
     functions = {},
@@ -430,8 +427,7 @@ pcall(require('telescope').load_extension 'neoclip')
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find,
-  { desc = '[/] Fuzzily search in current buffer' })
+vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>fG', require('telescope.builtin').git_files, { desc = '[F]ind [G]it Files' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })

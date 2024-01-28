@@ -1,4 +1,3 @@
-
 return {
   format = function(...)
     vim.lsp.buf.format {
@@ -9,4 +8,3 @@ return {
     }
   end,
 }
-

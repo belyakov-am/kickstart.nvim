@@ -1,13 +1,13 @@
 return {
-  "AckslD/nvim-neoclip.lua",
-  dependencies = {"nvim-telescope/telescope.nvim"},
-  config = function ()
-    require('neoclip').setup({
+  'AckslD/nvim-neoclip.lua',
+  dependencies = { 'nvim-telescope/telescope.nvim' },
+  config = function()
+    require('neoclip').setup {
       history = 1000,
       enable_persistent_history = false,
       length_limit = 1048576,
       continuous_sync = false,
-      db_path = vim.fn.stdpath("data") .. "/databases/neoclip.sqlite3",
+      db_path = vim.fn.stdpath 'data' .. '/databases/neoclip.sqlite3',
       filter = nil,
       preview = true,
       prompt = nil,
@@ -39,9 +39,9 @@ return {
             select = '<cr>',
             paste = '<c-p>',
             paste_behind = '<c-k>',
-            replay = '<c-q>',  -- replay a macro
-            delete = '<c-d>',  -- delete an entry
-            edit = '<c-e>',  -- edit an entry
+            replay = '<c-q>', -- replay a macro
+            delete = '<c-d>', -- delete an entry
+            edit = '<c-e>', -- edit an entry
             custom = {},
           },
           n = {
@@ -63,8 +63,8 @@ return {
           custom = {},
         },
       },
-    })
+    }
 
-    vim.keymap.set('n', '<leader>fy', ':Telescope neoclip<CR>', {desc = "[F]ind [Y]anks (Telescope Neoclip)"})
-  end
+    vim.keymap.set('n', '<leader>fy', ':Telescope neoclip<CR>', { desc = '[F]ind [Y]anks (Telescope Neoclip)' })
+  end,
 }
