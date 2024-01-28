@@ -6,7 +6,7 @@
       ) 
     arguments: 
       (argument_list
- (string (string_content) @injection.content)
+        (string (string_content) @injection.content)
       )
   )
 
