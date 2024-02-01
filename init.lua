@@ -461,6 +461,12 @@ vim.cmd.colorscheme 'catppuccin'
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    layout_strategy = 'horizontal',
+    layout_config = {
+      horizontal = {
+        width = 0.9,
+      },
+    },
     mappings = {
       i = {
         ['<C-u>'] = false,
