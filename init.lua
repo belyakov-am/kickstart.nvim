@@ -348,6 +348,8 @@ vim.o.termguicolors = true
 -- Tabs
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
+vim.o.shiftround = true
+vim.o.expandtab = true
 
 -- [[ Basic Keymaps ]]
 
