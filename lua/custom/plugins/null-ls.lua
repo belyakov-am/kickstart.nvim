@@ -28,7 +28,9 @@ return {
         -- Go
         null_ls.builtins.formatting.gofumpt,
         null_ls.builtins.formatting.goimports_reviser,
-        null_ls.builtins.formatting.golines,
+        null_ls.builtins.formatting.golines.with {
+          extra_args = { '--max-len', '120' },
+        },
 
         -- Rust
         null_ls.builtins.formatting.rustfmt,
