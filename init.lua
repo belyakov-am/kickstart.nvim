@@ -481,8 +481,6 @@ require('telescope').setup {
     },
     mappings = {
       i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
         -- Move in selections without exiting insert mode
         ['<C-j>'] = require('telescope.actions').move_selection_next,
         ['<C-k>'] = require('telescope.actions').move_selection_previous,
