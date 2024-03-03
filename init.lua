@@ -120,7 +120,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -351,6 +351,10 @@ vim.o.shiftwidth = 2
 vim.o.shiftround = true
 vim.o.expandtab = true
 
+-- Better splitting
+vim.o.splitbelow = true
+vim.o.splitright = true
+
 -- [[ Basic Keymaps ]]
 
 -- TODO(belyakov_am): add keymap for `:Telescope resume`
@@ -420,23 +424,23 @@ vim.g.loaded_python3_provider = 0
 -- Catpuccin
 require('catppuccin').setup {
   flavour = 'mocha', -- latte, frappe, macchiato, mocha
-  background = { -- :h background
+  background = {     -- :h background
     light = 'latte',
     dark = 'mocha',
   },
   transparent_background = false, -- disables setting the background color.
-  show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-  term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+  show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
+  term_colors = false,            -- sets terminal colors (e.g. `g:terminal_color_0`)
   dim_inactive = {
-    enabled = false, -- dims the background color of inactive window
+    enabled = false,              -- dims the background color of inactive window
     shade = 'dark',
-    percentage = 0.15, -- percentage of the shade to apply to the inactive window
+    percentage = 0.15,            -- percentage of the shade to apply to the inactive window
   },
-  no_italic = false, -- Force no italic
-  no_bold = false, -- Force no bold
-  no_underline = false, -- Force no underline
-  styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-    comments = { 'italic' }, -- Change the style of comments
+  no_italic = false,              -- Force no italic
+  no_bold = false,                -- Force no bold
+  no_underline = false,           -- Force no underline
+  styles = {                      -- Handles the styles of general hi groups (see `:h highlight-args`):
+    comments = { 'italic' },      -- Change the style of comments
     conditionals = { 'italic' },
     loops = {},
     functions = {},
@@ -502,7 +506,7 @@ require('telescope').setup {
     live_grep_args = {
       auto_quoting = true, -- enable/disable auto-quoting
       -- define mappings, e.g.
-      mappings = { -- extend mappings
+      mappings = {         -- extend mappings
         i = {
           ['<C-e>'] = lga_actions.quote_prompt(),
         },
@@ -561,7 +565,8 @@ vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
+vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find,
+  { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>fG', require('telescope.builtin').git_files, { desc = '[F]ind [G]it Files' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
@@ -571,7 +576,8 @@ vim.keymap.set('n', '<leader>fr', ':Telescope resume<CR>', { desc = '[F]ind [R]e
 
 vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[F]ind current [W]ord' })
 -- vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = '[F]ind by [G]rep' })
-vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = '[F]ind by [G]rep' })
+vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+  { desc = '[F]ind by [G]rep' })
 
 vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
