@@ -320,6 +320,9 @@ vim.o.mouse = 'a'
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
 
+-- Keep 10 lines above and below the cursor when scrolling
+vim.opt.scrolloff = 10
+
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
