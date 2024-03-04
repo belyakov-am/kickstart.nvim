@@ -576,7 +576,6 @@ vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuz
 
 vim.keymap.set('n', '<leader>fG', require('telescope.builtin').git_files, { desc = '[F]ind [G]it Files' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
-vim.keymap.set('n', '<leader>fB', require('telescope.builtin').buffers, { desc = '[F]ind [B]uffers' })
 vim.keymap.set('n', '<leader>fc', require('telescope.builtin').commands, { desc = '[F]ind [C]ommands' })
 vim.keymap.set('n', '<leader>fr', ':Telescope resume<CR>', { desc = '[F]ind [R]esume' })
 
