@@ -116,6 +116,9 @@ require('lazy').setup({
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
+
+      -- Adds pictograms to nvim-cmp
+      'onsails/lspkind-nvim',
     },
   },
 
@@ -820,6 +823,7 @@ mason_lspconfig.setup_handlers {
 -- See `:help cmp`
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
+local lspkind = require 'lspkind'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
@@ -829,9 +833,19 @@ cmp.setup {
       luasnip.lsp_expand(args.body)
     end,
   },
+
   completion = {
     completeopt = 'menu,menuone,noinsert',
   },
+
+  formatting = {
+    format = lspkind.cmp_format {
+      mode = 'symbol_text',
+      maxwidth = 50,
+      ellipsis_char = '...',
+    },
+  },
+
   mapping = cmp.mapping.preset.insert {
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -861,6 +875,7 @@ cmp.setup {
       end
     end, { 'i', 's' }),
   },
+
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
