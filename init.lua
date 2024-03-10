@@ -490,8 +490,9 @@ require('telescope').setup {
     --   },
     -- },
     layout_strategy = 'vertical',
+    sorting_strategy = 'ascending',
     layout_config = {
-      prompt_position = 'bottom',
+      prompt_position = 'top',
       width = {
         padding = 0,
       },
