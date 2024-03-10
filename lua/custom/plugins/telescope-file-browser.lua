@@ -29,6 +29,10 @@ return {
     require('telescope').setup {
       extensions = {
         file_browser = {
+          layout_config = {
+            prompt_position = 'top',
+          },
+
           grouped = true,
           sorting_strategy = 'ascending',
 

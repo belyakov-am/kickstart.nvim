@@ -483,10 +483,20 @@ local lga_actions = require 'telescope-live-grep-args.actions'
 
 require('telescope').setup {
   defaults = {
-    layout_strategy = 'horizontal',
+    -- layout_strategy = 'horizontal',
+    -- layout_config = {
+    --   horizontal = {
+    --     width = 0.9,
+    --   },
+    -- },
+    layout_strategy = 'vertical',
     layout_config = {
-      horizontal = {
-        width = 0.9,
+      prompt_position = 'bottom',
+      width = {
+        padding = 0,
+      },
+      height = {
+        padding = 0,
       },
     },
     mappings = {
