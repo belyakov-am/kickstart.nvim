@@ -27,7 +27,7 @@ return {
           accept_line = false,
           next = '<M-]>',
           prev = '<M-[>',
-          dismiss = '<C-]>',
+          dismiss = '<M-;>',
         },
       },
       filetypes = {
