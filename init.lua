@@ -546,6 +546,8 @@ pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension 'neoclip')
 -- Enable telescope live_grep_args
 pcall(require('telescope').load_extension 'live_grep_args')
+-- Enable notify to search through notifications
+pcall(require('telescope').load_extension 'notify')
 
 -- Telescope live_grep in git root
 -- Function to find the git root directory based on the current buffer's path
