@@ -67,12 +67,15 @@ return {
         ['<CR>'] = 'actions.select',
 
         ['<C-v>'] = 'actions.select_vsplit',
-        ['<C-s>'] = 'actions.select_split',
+        ['<C-x>'] = 'actions.select_split',
 
         ['<C-t>'] = 'actions.select_tab',
-        ['<C-p>'] = 'actions.preview',
         ['<C-c>'] = 'actions.close',
         ['<C-r>'] = 'actions.refresh',
+
+        ['<C-p>'] = 'actions.preview',
+        ['<C-d>'] = 'actions.preview_scroll_down',
+        ['<C-u>'] = 'actions.preview_scroll_up',
 
         ['-'] = 'actions.parent',
         ['_'] = 'actions.open_cwd',
