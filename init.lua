@@ -510,6 +510,9 @@ require('telescope').setup {
         ['<C-k>'] = require('telescope.actions').move_selection_previous,
         -- Center on selection
         ['<CR>'] = require('telescope.actions').select_default + require('telescope.actions').center,
+        -- Cycle through history
+        ['<C-l>'] = require('telescope.actions').cycle_history_next,
+        ['<C-h>'] = require('telescope.actions').cycle_history_prev,
       },
       n = {
         -- Center on selection
