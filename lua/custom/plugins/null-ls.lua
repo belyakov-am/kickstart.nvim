@@ -11,17 +11,17 @@ return {
         -- Turned off for now. Suggests simple words without any context.
         -- null_ls.builtins.completion.spell,
 
-        null_ls.builtins.diagnostics.eslint_d,
-
-        null_ls.builtins.code_actions.eslint_d,
+        -- null_ls.builtins.diagnostics.eslint_d,
+        --
+        -- null_ls.builtins.code_actions.eslint_d,
 
         null_ls.builtins.formatting.prettierd,
         null_ls.builtins.formatting.stylua,
 
         -- Python
         -- TODO(belyakov_am): do not remove unused vars on save
-        null_ls.builtins.diagnostics.ruff,
-        null_ls.builtins.formatting.ruff,
+        -- null_ls.builtins.diagnostics.ruff,
+        -- null_ls.builtins.formatting.ruff,
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
 
@@ -33,7 +33,7 @@ return {
         },
 
         -- Rust
-        null_ls.builtins.formatting.rustfmt,
+        -- null_ls.builtins.formatting.rustfmt,
       },
 
       on_attach = function(client, bufnr)
