@@ -377,7 +377,7 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Switch between tabs
-vim.keymap.set('n', '<Tab>', ':tabnext<CR>')
+vim.keymap.set('n', '<leader><Tab>', ':tabnext<CR>')
 vim.keymap.set('n', '<S-Tab>', ':tabprevious<CR>')
 
 -- Switch between panes
