@@ -789,6 +789,15 @@ local servers = {
     },
   },
 
+  -- TODO(belyakov_am): increase default LRU cap (?)
+  rust_analyzer = {
+    ['rust-analyzer'] = {
+      rustc = {
+        source = 'discover',
+      },
+    },
+  },
+
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
