@@ -806,6 +806,8 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
+
+  ruff_lsp = {},
 }
 
 -- Setup neovim lua configuration
