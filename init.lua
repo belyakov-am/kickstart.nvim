@@ -487,6 +487,65 @@ require('catppuccin').setup {
 vim.o.termguicolors = true
 vim.cmd.colorscheme 'catppuccin'
 
+-- [[ Configure Harpoon ]]
+local harpoon = require 'harpoon'
+harpoon:setup {}
+
+local telescope_conf = require('telescope.config').values
+local function toggle_telescope(harpoon_files)
+  local file_paths = {}
+  for _, item in ipairs(harpoon_files.items) do
+    table.insert(file_paths, item.value)
+  end
+
+  require('telescope.pickers')
+      .new({}, {
+        prompt_title = 'Harpoon',
+        finder = require('telescope.finders').new_table {
+          results = file_paths,
+        },
+        previewer = telescope_conf.file_previewer {},
+        sorter = telescope_conf.generic_sorter {},
+      })
+      :find()
+end
+
+vim.keymap.set('n', '<leader>ha', function()
+  harpoon:list():add()
+end, { desc = '[H]arpoon [A]dd' })
+
+vim.keymap.set('n', '<leader>hq', function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = '[H]arpoon [Q]uick Menu' })
+
+vim.keymap.set('n', '<leader>hr', function()
+  harpoon:list():remove()
+end, { desc = '[H]arpoon [R]emove Current File' })
+
+vim.keymap.set('n', '<leader>hc', function()
+  harpoon:list():clear()
+end, { desc = '[H]arpoon [C]lear All Files' })
+
+vim.keymap.set('n', '<leader>1', function()
+  harpoon:list():select(1)
+end, { desc = 'Harpoon File 1' })
+
+vim.keymap.set('n', '<leader>2', function()
+  harpoon:list():select(2)
+end, { desc = 'Harpoon File 2' })
+
+vim.keymap.set('n', '<leader>3', function()
+  harpoon:list():select(3)
+end, { desc = 'Harpoon File 3' })
+
+vim.keymap.set('n', '<leader>4', function()
+  harpoon:list():select(4)
+end, { desc = 'Harpoon File 4' })
+
+vim.keymap.set('n', '<leader>5', function()
+  harpoon:list():select(5)
+end, { desc = 'Harpoon File 5' })
+
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 local lga_actions = require 'telescope-live-grep-args.actions'
@@ -616,6 +675,10 @@ vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { de
 
 vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { desc = '[F]ile [B]rowser', noremap = true })
 
+vim.keymap.set('n', '<leader>hh', function()
+  toggle_telescope(harpoon:list())
+end, { desc = 'Open harpoon window' })
+
 -- Enable line number in Telescope preview window.
 vim.cmd 'autocmd User TelescopePreviewerLoaded setlocal number'
 
@@ -678,15 +741,6 @@ vim.defer_fn(function()
         goto_previous_end = {
           ['[M'] = '@function.outer',
           ['[]'] = '@class.outer',
-        },
-      },
-      swap = {
-        enable = true,
-        swap_next = {
-          ['<leader>a'] = '@parameter.inner',
-        },
-        swap_previous = {
-          ['<leader>A'] = '@parameter.inner',
         },
       },
     },
@@ -757,11 +811,12 @@ require('which-key').register {
   ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
   ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
   ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-  ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
   ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
   ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
   ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
   ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+  ['<leader>h'] = { name = '[H]arpoon', _ = 'which_key_ignore' },
+  ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
 }
 -- register which-key VISUAL mode
 -- required for visual <leader>hs (hunk stage) to work
