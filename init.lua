@@ -355,10 +355,10 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- Tabs
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.shiftround = true
-vim.o.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.shiftround = true
+vim.opt.expandtab = true
 
 -- Better splitting
 vim.o.splitbelow = true
