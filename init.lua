@@ -506,6 +506,13 @@ local function toggle_telescope(harpoon_files)
         },
         previewer = telescope_conf.file_previewer {},
         sorter = telescope_conf.generic_sorter {},
+        layout_strategy = 'vertical',
+        sorting_strategy = 'ascending',
+        layout_config = {
+          prompt_position = 'top',
+          width = 0.7,
+          height = 0.8,
+        },
       })
       :find()
 end
