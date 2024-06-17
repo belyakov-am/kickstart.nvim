@@ -33,11 +33,11 @@ return {
       use_default_keymaps = true,
       view_options = {
         show_hidden = true,
-        is_hidden_file = function(name, bufnr)
+        is_hidden_file = function(name, _)
           return vim.startswith(name, '.')
         end,
-        is_always_hidden = function(name, bufnr)
-          return false
+        is_always_hidden = function(name, _)
+          return name == '..' or name == '.git'
         end,
         natural_order = false,
       },
