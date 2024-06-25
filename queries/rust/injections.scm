@@ -5,11 +5,11 @@
   )
 
   (token_tree
-    (raw_string_literal) @injection.content
-  ) 
+    (raw_string_literal
+      (string_content) @injection.content
+    )
+  )
 
-  ; Trim leading `r#"` and trailing `"#`.
-  (#offset! @injection.content 0 3 0 -2)
   (#set! injection.language "sql")
 )
 
@@ -20,10 +20,10 @@
   )
 
   (token_tree
-    (string_literal) @injection.content
+    (string_literal
+      (string_content) @injection.content
+    )
   )
 
-  ; Trim leading `"` and trailing `"`.
-  (#offset! @injection.content 0 1 0 -1)
   (#set! injection.language "sql")
 )
