@@ -123,7 +123,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -440,23 +440,23 @@ vim.g.loaded_python3_provider = 0
 -- Catpuccin
 require('catppuccin').setup {
   flavour = 'mocha', -- latte, frappe, macchiato, mocha
-  background = {     -- :h background
+  background = { -- :h background
     light = 'latte',
     dark = 'mocha',
   },
   transparent_background = false, -- disables setting the background color.
-  show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
-  term_colors = false,            -- sets terminal colors (e.g. `g:terminal_color_0`)
+  show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+  term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
   dim_inactive = {
-    enabled = false,              -- dims the background color of inactive window
+    enabled = false, -- dims the background color of inactive window
     shade = 'dark',
-    percentage = 0.15,            -- percentage of the shade to apply to the inactive window
+    percentage = 0.15, -- percentage of the shade to apply to the inactive window
   },
-  no_italic = false,              -- Force no italic
-  no_bold = false,                -- Force no bold
-  no_underline = false,           -- Force no underline
-  styles = {                      -- Handles the styles of general hi groups (see `:h highlight-args`):
-    comments = { 'italic' },      -- Change the style of comments
+  no_italic = false, -- Force no italic
+  no_bold = false, -- Force no bold
+  no_underline = false, -- Force no underline
+  styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+    comments = { 'italic' }, -- Change the style of comments
     conditionals = { 'italic' },
     loops = {},
     functions = {},
@@ -499,22 +499,22 @@ local function toggle_telescope(harpoon_files)
   end
 
   require('telescope.pickers')
-      .new({}, {
-        prompt_title = 'Harpoon',
-        finder = require('telescope.finders').new_table {
-          results = file_paths,
-        },
-        previewer = telescope_conf.file_previewer {},
-        sorter = telescope_conf.generic_sorter {},
-        layout_strategy = 'vertical',
-        sorting_strategy = 'ascending',
-        layout_config = {
-          prompt_position = 'top',
-          width = 0.7,
-          height = 0.8,
-        },
-      })
-      :find()
+    .new({}, {
+      prompt_title = 'Harpoon',
+      finder = require('telescope.finders').new_table {
+        results = file_paths,
+      },
+      previewer = telescope_conf.file_previewer {},
+      sorter = telescope_conf.generic_sorter {},
+      layout_strategy = 'vertical',
+      sorting_strategy = 'ascending',
+      layout_config = {
+        prompt_position = 'top',
+        width = 0.7,
+        height = 0.8,
+      },
+    })
+    :find()
 end
 
 vim.keymap.set('n', '<leader>ha', function()
@@ -603,7 +603,7 @@ require('telescope').setup {
     live_grep_args = {
       auto_quoting = true, -- enable/disable auto-quoting
       -- define mappings, e.g.
-      mappings = {         -- extend mappings
+      mappings = { -- extend mappings
         i = {
           ['<C-e>'] = lga_actions.quote_prompt(),
         },
@@ -664,8 +664,7 @@ vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find,
-  { desc = '[/] Fuzzily search in current buffer' })
+vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>fG', require('telescope.builtin').git_files, { desc = '[F]ind [G]it Files' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
@@ -674,8 +673,7 @@ vim.keymap.set('n', '<leader>fr', ':Telescope resume<CR>', { desc = '[F]ind [R]e
 
 vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[F]ind current [W]ord' })
 -- vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = '[F]ind by [G]rep' })
-vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-  { desc = '[F]ind by [G]rep' })
+vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = '[F]ind by [G]rep' })
 
 vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
@@ -811,7 +809,6 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
-  nmap('<leader>cf', ':Format<CR>', 'Format current buffer with LSP')
 end
 
 -- document existing key chains
